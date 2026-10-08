@@ -1,0 +1,23 @@
+import { ArrowRight, ArrowDown, ShieldCheck, ListChecks, CloudDownload, Database, ChartNoAxesCombined, Presentation, Layers3, Building2, Network, Workflow, RefreshCw, Clock3 } from 'lucide-react';
+const flow = [
+ {title:'Cliente e acesso',short:'Contexto e autenticação',icon:ShieldCheck},
+ {title:'Central de análises',short:'Seleção e fila de execução',icon:ListChecks},
+ {title:'Coleta e ingestão',short:'Conectores Power BI / Fabric',icon:CloudDownload},
+ {title:'Snapshots',short:'Persistência em PostgreSQL',icon:Database},
+ {title:'Diagnóstico',short:'Indicadores por análise',icon:ChartNoAxesCombined},
+ {title:'Insights',short:'Apresentação dos resultados',icon:Presentation},
+];
+const modules = [
+ {title:'Cliente, autenticação e escopo',icon:ShieldCheck,text:'Cada execução pertence ao cliente ativo e a um analista responsável. A identidade do colaborador e a autenticação das integrações do cliente são tratadas separadamente, com credenciais protegidas no backend.'},
+ {title:'Análise Global e inventário',icon:Layers3,text:'Organiza workspaces, relatórios, modelos semânticos, dashboards, dataflows, aplicativos e itens Fabric. Os registros ficam vinculados à análise para permitir consulta consistente do ambiente coletado.'},
+ {title:'Gestão Portal Admin',icon:Building2,text:'Reúne informações administrativas do ambiente Power BI/Fabric para apoiar a avaliação e a governança. A disponibilidade dos dados depende das permissões e integrações configuradas para o cliente.'},
+ {title:'Gateways e conexões',icon:Network,text:'Apresenta recursos de administração, status e conexões dos gateways, ajudando a compreender a infraestrutura que conecta as fontes ao ambiente analítico.'},
+ {title:'Fontes de dados',icon:Workflow,text:'Organiza as fontes associadas a modelos semânticos e dataflows, com informações de conexões e gateways. Os diagnósticos de acesso a Dataflow Gen1 distinguem falhas identificadas de situações tecnicamente indeterminadas.'},
+ {title:'Gestão de atualizações',icon:RefreshCw,text:'Reúne informações de atualização dos modelos, incluindo agendamentos e contexto de horários, para apoiar a análise operacional do ambiente.'},
+ {title:'Gestão de inatividade',icon:Clock3,text:'Utiliza eventos de atividade e snapshots para identificar modelos sem uso. A classificação respeita as faixas de dias configuradas por cliente, apoiando a priorização da revisão do ambiente.'},
+ {title:'Histórico e insights',icon:Presentation,text:'Mantém resultados por cliente e análise e os apresenta em indicadores e slides de insights. A consulta utiliza os dados persistidos, evitando misturar execuções ou depender de uma nova coleta a cada navegação.'},
+];
+export function AssessmentFlow(){return <figure className="bpa-flow assessment-flow" aria-labelledby="assessment-flow-title"><figcaption><span className="eyebrow">DO AMBIENTE À VISÃO CONSOLIDADA</span><h2 id="assessment-flow-title">Como o Assessment Analyzer opera</h2><p>Coleta, organização e histórico para avaliar o ecossistema Power BI e Microsoft Fabric.</p></figcaption><ol className="bpa-flow-track">{flow.map(({title,short,icon:Icon},i)=><li key={title}><span className="flow-number">{String(i+1).padStart(2,'0')}</span><Icon size={27} strokeWidth={1.4} aria-hidden="true"/><h3>{title}</h3><p>{short}</p>{i<flow.length-1 && <ArrowRight className="flow-arrow" size={20} aria-hidden="true"/>}</li>)}</ol><div className="flow-note"><ArrowDown size={16} aria-hidden="true"/><p>O usuário escolhe as análises na Central. A fila executa uma por vez e só avança após sucesso; uma falha interrompe a sequência. Os módulos abaixo representam frentes de avaliação, não etapas obrigatórias de toda execução.</p></div></figure>}
+export function AssessmentArchitecture(){return <section className="detail-section"><p className="eyebrow">ARQUITETURA CONCEITUAL</p><h2>Um ambiente.<br/><span>Diferentes perspectivas.</span></h2><p className="muted">React → API FastAPI local → conectores e serviços de análise → PostgreSQL. As fontes Microsoft alimentam a ingestão; as telas consultam os resultados persistidos por meio da API interna.</p><div className="bpa-stage-grid">{modules.map(({title,text,icon:Icon},i)=><article className="bpa-stage-card" key={title}><div><span>{String(i+1).padStart(2,'0')}</span><Icon size={24} strokeWidth={1.4} aria-hidden="true"/></div><h3>{title}</h3><p>{text}</p></article>)}</div><p className="muted">A coleta depende de autenticação, permissões e habilitação das integrações. O histórico preserva o contexto do cliente e da análise, e os dashboards usam o último snapshot disponível conforme o módulo.</p></section>}
+
+
