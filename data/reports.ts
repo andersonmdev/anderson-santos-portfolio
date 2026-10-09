@@ -1,0 +1,12 @@
+export const reports = [{ id: 'faturamento', name: 'Faturamento', slides: [{
+ id: 'clientes-sintetico', title: 'Clientes Sintético', image: '/images/reports/faturamento-clientes.png',
+ summary: 'Uma visão executiva da saúde da carteira de clientes: aquisição, recorrência, perdas e concentração comercial. O painel conecta a evolução da base à qualidade do crescimento, apoiando decisões sobre retenção, expansão e alocação de esforços comerciais.',
+ notes: [
+ {title:'Saúde da carteira',text:'A leitura conjunta da base total, dos clientes que compraram no ano, das novas contas e dos clientes com cancelamentos ou devoluções revela a dinâmica da carteira. Esses indicadores ajudam a distinguir expansão comercial de sinais de perda de receita e a direcionar investigações sobre atendimento, produto e operação.'},
+ {title:'Recorrência e valor percebido',text:'A recompra sinaliza a capacidade de manter o relacionamento e a atratividade da oferta. Uma recorrência elevada pode indicar boa percepção de qualidade e preço; sua interpretação deve considerar também o ciclo de compra e o perfil dos clientes. Para a liderança, a análise orienta ações de fidelização e maior previsibilidade de receita.'},
+ {title:'Aquisição e diversificação',text:'A evolução dos novos clientes evidencia a capacidade comercial de ampliar a carteira. Quando acompanhada do faturamento e da retenção dessas contas, permite avaliar se a aquisição está diversificando as fontes de receita e reduzindo a dependência de poucos compradores.'},
+ {title:'Top 5 regiões · presença comercial',text:'O ranking das cinco regiões com maior número de clientes mostra onde a empresa concentra sua presença. Apoia decisões de cobertura comercial e expansão territorial, considerando que concentração de clientes não representa, necessariamente, concentração de faturamento.'},
+ {title:'Top 5 clientes · faturamento bruto',text:'Identifica as contas com maior contribuição ao faturamento bruto. A visão apoia a gestão de clientes estratégicos, a priorização de relacionamento e a avaliação do risco de concentração da receita.'},
+ {title:'Top 5 clientes · custo médio',text:'Destaca os clientes pelo indicador de custo médio dos produtos vendidos. Em conjunto com receita, volume e condições comerciais, ajuda a investigar a composição dos custos e oportunidades de revisão do mix. O custo isolado não determina a rentabilidade da conta.'},
+ ],
+ }] }];
