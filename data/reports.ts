@@ -1,5 +1,5 @@
 export const reports = [{ id: 'faturamento', name: 'Faturamento', slides: [{
- id: 'clientes-sintetico', title: 'Clientes Sintético', image: '/images/reports/faturamento-clientes.png',
+ id: 'clientes-sintetico', title: 'Clientes Sintético', image: '/images/reports/faturamento-clientes-original.png',
  summary: 'Uma visão executiva da saúde da carteira de clientes: aquisição, recorrência, perdas e concentração comercial. O painel conecta a evolução da base à qualidade do crescimento, apoiando decisões sobre retenção, expansão e alocação de esforços comerciais.',
  notes: [
  {title:'Saúde da carteira',text:'A leitura conjunta da base total, dos clientes que compraram no ano, das novas contas e dos clientes com cancelamentos ou devoluções revela a dinâmica da carteira. Esses indicadores ajudam a distinguir expansão comercial de sinais de perda de receita e a direcionar investigações sobre atendimento, produto e operação.'},
