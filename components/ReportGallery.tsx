@@ -37,7 +37,7 @@ export function ReportGallery() {
  <button type="button" className="report-flip-front" inert={flipped} aria-hidden={flipped}
  aria-label={active?'Virar imagem e ler análise executiva':`Ver ${item.title}`}
  onClick={()=>{if(swiped.current){swiped.current=false;return}if(active)setFocused(true);else{setIndex(i);setFocused(false);setHoverSuppressed(true)}}}>
- <Image unoptimized src={item.image} alt={`Relatório ${report?.name} — ${item.title}`} width={1361} height={766} sizes="(max-width: 760px) 90vw, 1000px" className="report-slide"/>
+ <Image unoptimized src={item.image} alt={`Relatório ${report?.name} — ${item.title}`} width={item.width} height={item.height} sizes="(max-width: 760px) 90vw, 1000px" className="report-slide"/>
  </button>
  <section className="report-flip-back" inert={!flipped} aria-hidden={!flipped} aria-label={`Análise executiva: ${item.title}`} tabIndex={flipped?0:-1}>
  <button type="button" className="report-flip-close" onClick={toggle}>Voltar à imagem <X size={16}/></button>
